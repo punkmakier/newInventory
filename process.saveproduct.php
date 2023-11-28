@@ -8,7 +8,7 @@ if($_POST['isDelete']){
 	die;
 }
 if($_POST['idx']){
-	safe_query("UPDATE products SET Description='{$_POST['desc']}', Price='{$_POST['price']}',ItemType='{$_POST['type']}' WHERE ID='{$_POST['idx']}'");
+	safe_query("UPDATE products SET Description='{$_POST['desc']}', Price='{$_POST['price']}',ItemType='{$_POST['type']}', ItemName='{$_POST['name']}', `Size`='{$_POST['size']}' WHERE ID='{$_POST['idx']}'");
 	$x = 1;
 
 }else{

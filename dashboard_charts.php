@@ -3,7 +3,7 @@
 include "config/load.php";
 
 if(isset($_POST['Action']) && $_POST['Action'] === "donut"){
-    	$sqlItemType = "SELECT COUNT(*) AS Totals, p.ItemName FROM products as p INNER JOIN itemtype as i ON i.ID = p.ItemType GROUP BY ItemType";
+    	$sqlItemType = "SELECT COUNT(*) AS Totals, p.ItemName, i.Description FROM products as p INNER JOIN itemtype as i ON i.ID = p.ItemType GROUP BY ItemType";
 
 		$query1 = mysqli_query($conn, $sqlItemType);
 
@@ -14,7 +14,7 @@ if(isset($_POST['Action']) && $_POST['Action'] === "donut"){
 				while($row = mysqli_fetch_array($query1)){
                     $dataList[] = array(
                         "Totals" => $row['Totals'],
-                        "Description" => $row['ItemName'],
+                        "Description" => $row['Description'],
                     );
 				}
 

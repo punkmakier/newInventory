@@ -59,7 +59,7 @@ function unsold(){
     $html = "";
     $count = 0;
     while($row = mysqli_fetch_array($query)){
-        $AmountPaid = number_format($rw['Price'],2);
+        $AmountPaid = number_format($row['Price'],2);
         $ItemCode = $row['ItemCode'];
         $Description = $row['Description'];
 
